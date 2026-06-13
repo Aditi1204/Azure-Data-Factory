@@ -1,0 +1,15 @@
+{
+	"name": "ADF-datafactory-aditi",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a989c2ec-198e-4baf-8af2-5b7e116de599",
+		"tenantId": "cff47f6c-989c-4137-a8f5-1efef51da173"
+	}
+}
