@@ -16,6 +16,9 @@
 			"transformations": [
 				{
 					"name": "selectCols"
+				},
+				{
+					"name": "filterRow"
 				}
 			],
 			"scriptLines": [
@@ -43,7 +46,8 @@
 				"          price",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> selectCols"
+				"     skipDuplicateMapOutputs: true) ~> selectCols",
+				"selectCols filter(customer_id != 12) ~> filterRow"
 			]
 		}
 	}
