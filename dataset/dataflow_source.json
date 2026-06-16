@@ -1,5 +1,5 @@
 {
-	"name": "dataflow_cource",
+	"name": "dataflow_source",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LinkedserviceDL",

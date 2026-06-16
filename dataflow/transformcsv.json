@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "dataflow_cource",
+						"referenceName": "dataflow_source",
 						"type": "DatasetReference"
 					},
 					"name": "sourcecsv"
