@@ -19,6 +19,9 @@
 				},
 				{
 					"name": "filterRow"
+				},
+				{
+					"name": "splitpayment"
 				}
 			],
 			"scriptLines": [
@@ -47,7 +50,10 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> selectCols",
-				"selectCols filter(customer_id != 12) ~> filterRow"
+				"selectCols filter(customer_id != 12) ~> filterRow",
+				"filterRow split(payment == 'visa',",
+				"     payment == 'mastercard',",
+				"     disjoint: false) ~> splitpayment@(visa, mastercard, amex)"
 			]
 		}
 	}
