@@ -25,6 +25,9 @@
 				},
 				{
 					"name": "derivedColumn1"
+				},
+				{
+					"name": "aggregate"
 				}
 			],
 			"scriptLines": [
@@ -57,7 +60,9 @@
 				"filterRow split(payment == 'visa',",
 				"     payment == 'mastercard',",
 				"     disjoint: false) ~> splitpayment@(visa, mastercard, amex)",
-				"splitpayment@amex derive(payment = coalesce(payment,'N/A')) ~> derivedColumn1"
+				"splitpayment@amex derive(payment = coalesce(payment,'N/A')) ~> derivedColumn1",
+				"splitpayment@visa aggregate(groupBy(customer_id),",
+				"     product_id = max(product_id)) ~> aggregate"
 			]
 		}
 	}
