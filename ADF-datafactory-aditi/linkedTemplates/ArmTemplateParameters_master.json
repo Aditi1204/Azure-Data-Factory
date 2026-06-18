@@ -14,6 +14,9 @@
 		"source_git_properties_typeProperties_url": {
 			"value": "https://raw.githubusercontent.com/"
 		},
+		"pipeline1trigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/f56673ef-12b9-4354-bfc2-2a7537ab05aa/resourceGroups/Azure_fundamentals/providers/Microsoft.Storage/storageAccounts/azurefundastorageaditi"
+		},
 		"containerUri": {
 			"value": ""
 		},
