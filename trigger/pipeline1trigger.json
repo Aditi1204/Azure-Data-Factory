@@ -1,0 +1,24 @@
+{
+	"name": "pipeline1trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline1",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/rawdata/blobs/csvfiles/Fact_Sales_1.csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/f56673ef-12b9-4354-bfc2-2a7537ab05aa/resourceGroups/Azure_fundamentals/providers/Microsoft.Storage/storageAccounts/azurefundastorageaditi",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
