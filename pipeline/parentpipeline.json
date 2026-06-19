@@ -1,0 +1,47 @@
+{
+	"name": "parentpipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "ExecutePipeline1",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipeline1",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "ExecuteonlyselectedPipeline",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "ExecutePipeline1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Onlyselectedfiles",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": []
+	}
+}
